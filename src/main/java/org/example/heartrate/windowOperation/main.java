@@ -1,18 +1,19 @@
 package org.example.heartrate.windowOperation;
 
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.User32;
-import com.sun.jna.platform.win32.WinDef;
+import org.example.heartrate.Enum.CoordinateEnum;
+import org.example.heartrate.constant.Constant;
 
-import java.awt.*;
-import java.awt.event.InputEvent;
-
-import static org.example.heartrate.windowOperation.Operation.clickOnWindow;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 
 public class main {
     public static void main(String[] args) {
-        String targetTitle = "CardioChip PC Starter Software Trial Version";
-        clickOnWindow();
+        Operation.clickButton(Constant.SAVE_RECORDED_DATA_NAME, CoordinateEnum.SAVE_BUTTON.getX(), CoordinateEnum.SAVE_BUTTON.getY());
+        Date date = new Date(1729492326);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy - MM - dd HH:mm:ss");
+        System.out.println(format.format(date));
     }
+
 }
